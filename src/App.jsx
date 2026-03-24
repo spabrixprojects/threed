@@ -90,8 +90,10 @@ const Hero = () => {
     const img = images[index];
 
     if (img && img.complete && img.naturalWidth > 0) {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      if (canvas.width !== window.innerWidth || canvas.height !== window.innerHeight) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+      }
       
       const ratio = Math.max(canvas.width / img.naturalWidth, canvas.height / img.naturalHeight);
       const newWidth = img.naturalWidth * ratio;
