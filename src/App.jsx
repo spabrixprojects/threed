@@ -9,8 +9,9 @@ const ScrollProgressCar = () => {
   
   return (
     <>
-      <div style={{ position: 'fixed', right: '35px', top: 0, height: '100vh', width: '2px', background: 'rgba(255,255,255,0.05)', zIndex: 9998 }}></div>
+      <div className="scroll-progress-line" style={{ position: 'fixed', right: '35px', top: 0, height: '100dvh', width: '2px', background: 'rgba(255,255,255,0.05)', zIndex: 9998 }}></div>
       <motion.div
+        className="scroll-progress-car"
         style={{
           position: 'fixed',
           right: '20px',
@@ -153,7 +154,7 @@ const Hero = () => {
 
   return (
     <section ref={containerRef} style={{ height: '400vh', position: 'relative' }} id="home">
-      <div style={{ position: 'sticky', top: 0, height: '100vh', overflow: 'hidden' }}>
+      <div style={{ position: 'sticky', top: 0, height: '100dvh', overflow: 'hidden' }}>
         <canvas 
           ref={canvasRef} 
           style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', objectFit: 'cover' }} 
@@ -164,30 +165,30 @@ const Hero = () => {
 
 
         {/* Text 2: Feature 1 */}
-        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'flex-start', paddingLeft: '10%', zIndex: 10, pointerEvents: 'none' }}>
+        <div className="hero-feature-container hero-feature-1">
           <motion.div 
-            className="hero-content" 
-            style={{ opacity: text2Opacity, y: text2Y, textAlign: 'left', pointerEvents: 'auto' }}
+            className="hero-content hero-feature-content-1" 
+            style={{ opacity: text2Opacity, y: text2Y, pointerEvents: 'auto' }}
           >
-            <h2 className="title-glow" style={{ fontSize: '3rem', margin: 0 }}>
+            <h2 className="title-glow hero-feature-title">
               <span className="text-accent">AERODYNAMIC</span><br />PRECISION
             </h2>
-            <p style={{ maxWidth: '400px', marginTop: '1rem', fontSize: '1.2rem', color: '#ccc' }}>
+            <p className="hero-feature-desc">
               Every curve meticulously crafted to slice through the air, minimizing drag and maximizing performance on the track.
             </p>
           </motion.div>
         </div>
 
         {/* Text 3: Feature 2 */}
-        <div style={{ position: 'absolute', inset: 0, display: 'flex', alignItems: 'center', justifyContent: 'flex-end', paddingRight: '10%', zIndex: 10, pointerEvents: 'none' }}>
+        <div className="hero-feature-container hero-feature-2">
           <motion.div 
-            className="hero-content" 
-            style={{ opacity: text3Opacity, y: text3Y, textAlign: 'right', pointerEvents: 'auto' }}
+            className="hero-content hero-feature-content-2" 
+            style={{ opacity: text3Opacity, y: text3Y, pointerEvents: 'auto' }}
           >
-            <h2 className="title-glow" style={{ fontSize: '3rem', margin: 0 }}>
+            <h2 className="title-glow hero-feature-title">
               CARBON FIBER<br /><span className="text-accent">CHASSIS</span>
             </h2>
-            <p style={{ maxWidth: '400px', marginTop: '1rem', fontSize: '1.2rem', color: '#ccc', marginLeft: 'auto' }}>
+            <p className="hero-feature-desc">
               Ultra-lightweight yet incredibly rigid. The ultimate balance of safety and extreme agility without compromise.
             </p>
           </motion.div>
